@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import multer from "multer";
 import compression from "compression";
 import rateLimit from "express-rate-limit";
+import "colors";
 import { body, validationResult } from "express-validator";
 import passport from "passport";
 
@@ -73,7 +74,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`.yellow.bold);
 });
 
 export default app;
